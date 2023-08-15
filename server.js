@@ -1,15 +1,15 @@
 // DEPENDENCIES
 const express = require('express');
-// const expressEjsLayouts = require('express-ejs-layouts');
-// const morgan = require('morgan');
 const app = express();
 const PORT = 3000;
+const expressLayouts = require('express-ejs-layouts');
+// const morgan = require('morgan');
 
+app.set('view engine', 'ejs');
 
 // MIDDLEWARE 
-// app.set('view engine', 'ejs');
 app.use(express.static('public'));
-// app.use(expressEjsLayouts);
+app.use(expressLayouts);
 // app.use(express.urlencoded({extended: true}));
 // app.use(express.json());
 // // app.use(methodoverride('_method'));

@@ -1,6 +1,10 @@
 h1{
-    color: green;
+    color: rgb(0, 0, 0);
+    font-family: monton;
 }
 h2 {
-    color: yellow;
+    color: rgb(0, 0, 0);
+}
+h3 {
+    color: rgb(0, 0, 0);
 }
