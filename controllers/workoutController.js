@@ -3,7 +3,10 @@ const router = express.Router();
 const Workout = require('../models/workout');
 
 // INDEX ROUTE 
-app.get
+app.get('/', async (req, res) => {
+    let workouts = await Workout.find();
+    res.render('workout/index.ejs', {workouts})
+});
 
 // NEW ROUTE
 
