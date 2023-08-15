@@ -3,4 +3,24 @@ const app = express();
 const PORT = 3000;
 
 
-app.listen(PORT, () => console.log("GainFlex Tracker on Port 3000!", PORT))
+// MIDDLEWARE 
+
+// INDEX ROUTE 
+app.get
+
+// NEW ROUTE
+
+
+// DELETE ROUTE 
+
+// UPDATE ROUTE
+
+// CREATE ROUTE 
+
+// EDIT ROUTE
+
+// SHOW ROUTE 
+
+app.listen(PORT, () => {
+    console.log(`GainFlex Tracker on Port ${PORT}!`);
+  });
