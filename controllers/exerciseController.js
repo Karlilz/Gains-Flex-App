@@ -2,23 +2,22 @@
 // const router = express.Router();
 // const Exercise = require('../models/exercise');
 
-// // INDEX ROUTE 
+// INDEX ROUTE 
 // app.get('/', async (req, res) => {
 //     let exercises = await Exercise.find();
 //     res.render('exercise/index.ejs', {exercises})
 // });
 
-// // NEW ROUTE
+// NEW ROUTE
 
+// DELETE ROUTE 
 
-// // DELETE ROUTE 
+// UPDATE ROUTE
 
-// // UPDATE ROUTE
+// CREATE ROUTE 
 
-// // CREATE ROUTE 
+// EDIT ROUTE
 
-// // EDIT ROUTE
-
-// // SHOW ROUTE 
+// SHOW ROUTE 
 
 // module.exports = router; 

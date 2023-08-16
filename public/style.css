@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #254E58;
 }.landing-headers {
-    color: rgb(0, 0, 0);
+    color: #88BDBC;
     font-family: bungee;
     text-align: center;
     font-size: 25px;
@@ -28,13 +29,23 @@ body {
     font-size: 16px;
     color: rgb(0, 0, 0);
 }
-.login-welcome {
+
+.login-headers {
+    color: #88BDBC;
     font-family: bungee;
     text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
 }
-.signup-welcome {
-    font-family: bungee;
-    text-align: center;
+.login-icon {
+    position: center;
+    margin-top: 10px;
+}
+.login-icon img{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: auto;
 }
 .login-fields {
     display: flex;
@@ -47,6 +58,14 @@ body {
 .login-fields input, .login-fields button {
     margin: 5px 0; 
 }
+
+.signup-headers {
+    color: #88BDBC;
+    font-family: bungee;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+}
 .signup-fields {
     display: flex;
     flex-direction: column;
@@ -56,6 +75,16 @@ body {
 }
 .signup-fields input .signup-fields button {
     margin-bottom: 45px 
+}
+.signup-icon {
+    position: center;
+    margin-top: 10px;
+}
+.signup-icon img{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: auto;
 }
 
 
