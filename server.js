@@ -20,6 +20,28 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 });
 
+// LOGIN BUTTON - to LOGIN PAGE
+app.get('/login', (req, res) => {
+    res.render('auth/login');
+});
+
+// LOGIN BUTTON - to MAIN Exercise PAGE
+app.post('/login', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
+
+// SIGNUP BUTTON - to SIGNUP PAGE
+app.get('/signup', (req, res) => {
+    res.render('auth/signup');
+});
+
+// Create the user and navigate to LOGIN
+app.post('/signup', (req, res) => {
+    console.log(req.body)
+    res.send(req.body);
+});
+
 // SERVER LISTENER
 app.listen(PORT, () => {
     console.log(`GainFlex Tracker on Port ${PORT}!`);
