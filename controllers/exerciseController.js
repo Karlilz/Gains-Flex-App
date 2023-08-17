@@ -97,16 +97,39 @@ router.get('/exercise/seed', async (req, res) => {
 });
 
 
-// NEW ROUTE
+// NEW ROUTE - add new exercise 
+router.get("/exercise/new", async (req, res) => {
+    res.render("exercise/new.ejs");
+  });
 
-// DELETE ROUTE 
+// DELETE ROUTE - delete exercise 
+router.delete('/exercise/:id', async (req, res) => {
+    let deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
+    res.redirect('/exercise')
+})
+// UPDATE ROUTE - post edited exercise 
+router.put('exercise/:id', async (req, res) => {
+    
+})
 
-// UPDATE ROUTE
+// CREATE ROUTE - post new exercise
+router.post('', async (req, res) => {
 
-// CREATE ROUTE 
+})
 
-// EDIT ROUTE
+// EDIT ROUTE - edit exercise 
+router.get('/exercise/:id/edit', async (req, res) => {
+    const id = req.params.id
+    let foundExercise = await Exercise.findById(req.params.id);
+    res.render('exercise/update.ejs');
+    Exercise: foundExercise;
+})
 
-// SHOW ROUTE 
+// SHOW ROUTE - exercise details 
+router.get('/exercise/:id', async (req, res) => {
+    const id = req.params.id;
+
+
+});
 
 module.exports = router; 
