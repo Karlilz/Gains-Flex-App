@@ -4,7 +4,7 @@ const Exercise = require('../models/exercise');
 const Workouts = require('../models/workout');
 
 // INDEX ROUTE 
-// app.get('/', async (req, res) => {
+// router.get('/exercise', async (req, res) => {
 //     let exercises = await Exercise.find();
 //     res.render('exercise/index.ejs', {exercises})
 // });
@@ -19,7 +19,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training", 
             difficultyLevel: "Intermediate", 
             requiresEquipment: false,
-            image: "",
+            image: "images/push-up.png",
         },
         {
             name: "Squat",
@@ -27,7 +27,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training",
             difficultyLevel: "Beginner",
             requiresEquipment: false,
-            image: " ",
+            image: "images/squat.png",
         },
         {
             name: "Kettlebell Swing",
@@ -35,7 +35,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Cardio",
             difficultyLevel: "Intermediate",
             requiresEquipment: true,
-            image: " ",
+            image: "images/kettlebell-swing.png",
         },
         {
             name: "Plank",
@@ -43,7 +43,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Core Training",
             difficultyLevel: "Beginner",
             requiresEquipment: false,
-            image:
+            image: "images/plank.png",
         },
         {
             name: "Lunges",
@@ -51,7 +51,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training",
             difficultyLevel: "Intermediate",
             requiresEquipment:false,
-            image:
+            image:"images/lunges.png",
         },
         {
             name:"Bench Press",
@@ -59,7 +59,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training",
             difficultyLevel: "Intermediate",
             requiresEquipment:true,
-            image:
+            image: "images/bench-press.png",
         },
         {
             name:"Mountain Climbers",
@@ -67,7 +67,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Cardio",
             difficultyLevel: "Intermediate",
             requiresEquipment: false,
-            image:
+            image: "images/mountain-climber.png",
         },
         {
             name: "Pull-up",
@@ -75,7 +75,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training",
             difficultyLevel: "Advanced",
             requiresEquipment: true,
-            image:
+            image: "images/pull-up.png",
         },
         {
             name: "Yoga Downward Dog",
@@ -83,7 +83,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Flexibility",
             difficultyLevel: "Beginner",
             requiresEquipment: false,
-            image:
+            image: "images/downward-dog.png",
         },
         {
             name: "Dumbbell Shoulder Press",
@@ -91,7 +91,7 @@ router.get('/seed/exercise', async (req, res) => {
             category: "Strength Training",
             difficultyLevel: "Intermediate",
             requiresEquipment: true, 
-            image: 
+            image: "images/shoulder-press.png",
         },
     ]);
     res.send(seededExercises);

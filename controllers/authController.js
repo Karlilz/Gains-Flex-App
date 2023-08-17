@@ -15,8 +15,9 @@ router.post('/login', async (req, res) => {
     if (userToLogin) {
         bcrypt.compare(req.body.password, userToLogin.password, (err, result) => {
             if (result) {
-                req.session.userId = userToLogin
-                res.send("Logged In!");
+                req.session.userId = userToLogin._id;
+                req.session.name = userToLogin.name;
+                res.redirect('/exercise');
             } else {
                 res.send("Incorrect Password");
             }
