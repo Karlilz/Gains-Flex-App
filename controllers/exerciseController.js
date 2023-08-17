@@ -4,13 +4,12 @@ const Exercise = require('../models/exercise');
 const Workouts = require('../models/workout');
 
 // INDEX ROUTE 
-// router.get('/exercise', async (req, res) => {
-//     let exercises = await Exercise.find();
-//     res.render('exercise/index.ejs', {exercises})
-// });
+router.get('/exercise', (req, res) => {
+    res.render('exercise/index.ejs');
+});
 
 // SEED ROUTE
-router.get('/seed/exercise', async (req, res) => {
+router.get('/exercise/seed', async (req, res) => {
     await Exercise.deleteMany({});
     let seededExercises = await Exercise.create([
         {
