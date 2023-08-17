@@ -87,8 +87,11 @@ body {
     height: auto;
 }
 
-.exercise-index-headers{
+.exercise-index-headers h1{
     color: #88BDBC;
+}
+.exercise-index-headers h2{
+    color: #F6EEE3;
 }
 .exercise-index-images {
     display: flex;
@@ -100,5 +103,27 @@ body {
     height: 250px; 
     padding: 5px;
     margin: 25px; 
+  }
+
+
+    .exercise-new-headers{
+    color: #88BDBC;
+}
+    .new-exercise-input {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .new-exercise-input label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .new-exercise-input input[type="text"],
+  .new-exercise-input input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
   }
 

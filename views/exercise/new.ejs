@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add a New Exercise</title>
+
+<body>
+    <div class="exercise-new-headers">
+        <h1>Add a New Exercise</h1>
+    </div>
+
+  <div class="newRoute-button-container">
+    <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
+  </div>
+
+  <main>
+    <div class="new-exercise-input">
+      <form action="/exercise" method="POST">
+
+        <label for="name"><b>Name:</b></label>
+        <input type="text" name="name" placeholder="Exercise Name">
+
+        <label for="description"><b>Description:</b></label>
+        <input type="text" name="description" placeholder="Brief Description">
+
+        <label for="category"><b>Category:</b></label>
+        <input type="text" name="category" placeholder="e.g., Cardio">
+
+        <label for="level"><b>Difficulty Level:</b></label>
+        <input type="text" name="level" placeholder="e.g., Advanced">
+
+        <label for="equipment"><b>Equipment Needed:</b></label>
+        <input type="text" name="equipment" placeholder="e.g., Dumbells">
+
+        <label for="image"><b>Image:</b></label>
+        <input type="text" name="image" placeholder="Enter an Image Link">
+       
+        <div class="button-container">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -93,22 +93,6 @@ router.get('/exercise/seed', async (req, res) => {
             requiresEquipment: true, 
             image: "images/shoulder-press.png",
         },
-        {
-            name: " ",
-            description: "A weightlifting exercise targeting the shoulders. Hold a dumbbell in each hand at shoulder height, then press them overhead.",
-            category: " ",
-            difficultyLevel: " ",
-            requiresEquipment: , 
-            image: " ",
-        },
-        {
-            name: "Dumbbell Shoulder Press",
-            description: "A weightlifting exercise targeting the shoulders. Hold a dumbbell in each hand at shoulder height, then press them overhead.",
-            category: "Strength Training",
-            difficultyLevel: "Intermediate",
-            requiresEquipment: true, 
-            image: "images/shoulder-press.png",
-        },
     ]);
     res.send(seededExercises);
 });
@@ -123,30 +107,34 @@ router.get("/exercise/new", async (req, res) => {
 router.delete('/exercise/:id', async (req, res) => {
     let deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
     res.redirect('/exercise')
-})
+}); 
+
 // UPDATE ROUTE - post edited exercise 
 router.put('exercise/:id', async (req, res) => {
 
-})
+});
 
 // CREATE ROUTE - post new exercise
-router.post('', async (req, res) => {
-
-})
+router.post('/exercise', async (req, res) => {
+    req.body.user = req.session.userId
+    let newExercise = await Exercise.create(req.body);
+    console.log(req.session.userId);
+    res.redirect('/exercise');
+});
 
 // EDIT ROUTE - edit exercise 
 router.get('/exercise/:id/edit', async (req, res) => {
-    const id = req.params.id
     let foundExercise = await Exercise.findById(req.params.id);
-    res.render('exercise/update.ejs');
-    Exercise: foundExercise;
-})
+    res.render('exercise/update.ejs', {exercise});
+});
 
 // SHOW ROUTE - exercise details 
 router.get('/exercise/:id', async (req, res) => {
     const id = req.params.id;
-
-
+    const foundExercise = exercise.find(({ id }) => id === req.params.id);
+    res.render('show.ejs', {
+        exercise: foundExercise,
+    });
 });
 
 module.exports = router; 
