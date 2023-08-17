@@ -1,14 +1,37 @@
-<% [{name: 'Push-up'}, {name: 'Squat'}, {name: 'Plank'}].forEach(exercise => { %>
+<!DOCTYPE html>
+<html>
 
-    <h1><%=exercise.name %></h1>
-    <p>
-        <% = exercise.description %>
-    </p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainFlex Exercise Image Gallery</title>
+</head>
 
-<% }) %>
+<body>
 
-<style>
-    h1 {
-        color: #88BDBC;
-    }
-</style>
+    <h1>GainFlex Exercise Image Gallery</h1>
+
+    <h2>Discover More Details by Selecting the Images Below</h2>
+
+    <a href="/exercise/new">
+        <button class="create-button">Add New Exercise</button>
+    </a>
+
+    <div class="exercise-images">
+      <% exercise.forEach((exercise) => { %>
+        <a href="/exercise">
+        <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
+        </a>
+      <% }); %>
+    </div>
+
+    <style>
+        h1 {
+            color: #88BDBC;
+        }
+    </style> 
+
+  </body>
+
+</html>

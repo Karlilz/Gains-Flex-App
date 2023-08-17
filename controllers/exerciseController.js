@@ -4,8 +4,9 @@ const Exercise = require('../models/exercise');
 const Workouts = require('../models/workout');
 
 // INDEX ROUTE 
-router.get('/exercise', (req, res) => {
-    res.render('exercise/index.ejs');
+router.get('/exercise', async (req, res) => {
+    let exercise = await Exercise.find();
+    res.render('exercise/index.ejs', {exercise});
 });
 
 // SEED ROUTE
@@ -109,7 +110,7 @@ router.delete('/exercise/:id', async (req, res) => {
 })
 // UPDATE ROUTE - post edited exercise 
 router.put('exercise/:id', async (req, res) => {
-    
+
 })
 
 // CREATE ROUTE - post new exercise
