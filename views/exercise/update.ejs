@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</head>
+
+<title>Update Exercise</title>
+
+<body>
+  <h1>Enhance Your Workout: Update an Exercise</h1>
+
+  <div class="button-container">
+    <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
+    <button onclick="window.location.href='/pokemon/<%= pokemon.id %>'">Back to Pokemon Profile</button>
+</div>
+
+  <form action="/pokemon/<%= pokemon.id %>?_method=PUT" method="POST">
+
+    <img src="<%= pokemon.img %>" alt="Image" class="pokemon-img">
+
+  <main>
+    <div class="new-pokemon-input">
+      <form action="/pokemon" method="POST">
+
+        <div class="pokemon-info">
+            <div class="pokemon-identity">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="<%= pokemon.name %>">
+            </div>
+            <div class="pokemon-stats">
+                <label for="type">Type:</label>
+                <input type="text" name="type" value="<%= pokemon.type %>" >
+
+                <label for="HP">HP:</label>
+                <input type="text" name="HP" value="<%= pokemon.stats.hp %>">
+
+                <label for="attack">Attack:</label>
+                <input type="text" name="attack" value="<%= pokemon.stats.attack %>">
+
+                <label for="specialAttack">Special Attack:</label>
+                <input type="text" name="specialAttack" value="<%= pokemon.stats.spattack %>">
+
+                <label for="defense">Defense:</label>
+                <input type="text" name="defense" value="<%= pokemon.stats.defense %>">
+
+                <label for="specialDefense">Special Defense:</label>
+                <input type="text" name="specialDefense" value="<%= pokemon.stats.spdefense %>">
+
+                <label for="speed">Speed:</label>
+                <input type="text" name="speed" value="<%= pokemon.stats.speed %>">
+
+                <label for="image">Image:</label>
+                <input type="text" name="img" value="<%= pokemon.img %>">
+            </div>
+        </div>
+
+        <div class="bottom-button-container">
+          <input type="submit" value="Update Exercise" />
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

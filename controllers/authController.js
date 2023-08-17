@@ -11,8 +11,9 @@ router.get('/login', (req, res) => {
 // LOGIN BUTTON - to MAIN Exercise PAGE
 router.post('/login', async (req, res) => {
     console.log(req.body);
-    let userToLogin = await User.findOne({ username: req.body.username });
+    let userToLogin = await User.findOne({ name: req.body.username });
     if (userToLogin) {
+        console.log(userToLogin)
         bcrypt.compare(req.body.password, userToLogin.password, (err, result) => {
             if (result) {
                 req.session.userId = userToLogin._id;

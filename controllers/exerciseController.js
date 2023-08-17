@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Exercise = require('../models/exercise');
-const Workouts = require('../models/workout');
+const Schedule = require('../models/schedule');
 
 // INDEX ROUTE 
 router.get('/exercise', async (req, res) => {
@@ -84,6 +84,22 @@ router.get('/exercise/seed', async (req, res) => {
             difficultyLevel: "Beginner",
             requiresEquipment: false,
             image: "images/downward-dog.png",
+        },
+        {
+            name: "Dumbbell Shoulder Press",
+            description: "A weightlifting exercise targeting the shoulders. Hold a dumbbell in each hand at shoulder height, then press them overhead.",
+            category: "Strength Training",
+            difficultyLevel: "Intermediate",
+            requiresEquipment: true, 
+            image: "images/shoulder-press.png",
+        },
+        {
+            name: " ",
+            description: "A weightlifting exercise targeting the shoulders. Hold a dumbbell in each hand at shoulder height, then press them overhead.",
+            category: " ",
+            difficultyLevel: " ",
+            requiresEquipment: , 
+            image: " ",
         },
         {
             name: "Dumbbell Shoulder Press",

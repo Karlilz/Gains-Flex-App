@@ -87,5 +87,18 @@ body {
     height: auto;
 }
 
-
+.exercise-index-headers{
+    color: #88BDBC;
+}
+.exercise-index-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .exercise-img {
+    width: 250px; 
+    height: 250px; 
+    padding: 5px;
+    margin: 25px; 
+  }
 

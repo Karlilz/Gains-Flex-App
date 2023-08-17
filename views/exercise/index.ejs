@@ -9,28 +9,22 @@
 </head>
 
 <body>
+    <div class="exercise-index-headers">
+        <h1>GainFlex Exercise Image Gallery</h1>
 
-    <h1>GainFlex Exercise Image Gallery</h1>
-
-    <h2>Discover More Details by Selecting the Images Below</h2>
+        <h2>Discover More Details by Selecting the Images Below</h2>
+    </div>
 
     <a href="/exercise/new">
         <button class="create-button">Add New Exercise</button>
     </a>
 
-    <div class="exercise-images">
-      <% exercise.forEach((exercise) => { %>
-        <a href="/exercise">
-        <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
-        </a>
-      <% }); %>
-    </div>
-
-    <style>
-        h1 {
-            color: #88BDBC;
-        }
-    </style> 
+    <div class="exercise-index-images">
+        <% exercise.forEach(exercise => { %>
+            <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
+          </a>
+        <% }); %>
+      </div>
 
   </body>
 
