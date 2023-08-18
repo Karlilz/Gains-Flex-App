@@ -12,7 +12,7 @@
     <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
 </div>
 
-  <form action="/exercise/<%= pokemon.id %>?_method=PUT" method="POST">
+  <form action="/exercise/<%= exercise.id %>?_method=PUT" method="POST">
 
     <img src="<%= exercise.img %>" alt="Image" class="exercise-img">
 
@@ -20,11 +20,6 @@
     <div class="new-exercise-input">
       <form action="/exercise" method="POST">
 
-        <div class="pokemon-info">
-            <div class="pokemon-identity">
-                <label for="name">Name:</label>
-                <input type="text" name="name" value="<%= pokemon.name %>">
-            </div>
             <div class="-stats">
                 <label for="type">Type:</label>
                 <input type="text" name="type" value="<%= pokemon.type %>" >

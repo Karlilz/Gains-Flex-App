@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user');
 const Exercise = require('../models/exercise');
 const Schedule = require('../models/schedule');
 
@@ -115,12 +116,27 @@ router.put('exercise/:id', async (req, res) => {
 });
 
 // CREATE ROUTE - post new exercise
+// router.post('/exercise', async (req, res) => {
+//     req.body.user = req.session.userId
+//     let newExercise = await Exercise.create(req.body);
+//     console.log(req.session.userId);
+//     res.redirect('/exercise');
+// });
 router.post('/exercise', async (req, res) => {
-    req.body.user = req.session.userId
-    let newExercise = await Exercise.create(req.body);
-    console.log(req.session.userId);
-    res.redirect('/exercise');
-});
+    try {
+      let newExercise = new Exercise({
+        name: req.body.name,
+        description: req.body.description,
+        category: req.body.category,
+        difficultyLevel: req.body.difficultyLevel,
+        requiresEquipment: req.body.requiresEquipment
+      });
+      await newExercise.save();
+      res.redirect('/exercises'); 
+        } catch (error) {
+        console.error(error);
+        }
+  });
 
 // EDIT ROUTE - edit exercise 
 router.get('/exercise/:id/edit', async (req, res) => {
