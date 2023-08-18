@@ -1,0 +1,10 @@
+<% orders.forEach(order => { %>
+    <h2>Schedule for <%= schedule.userId.name %></h2>
+    
+    <% schedule.coffees.forEach(exercise => { %>
+        <div>
+            <p><%= exercise.name %> </p>
+            <p><%= exercise.description %></p>
+        </div>
+    <% }); %>
+<% }) %>
