@@ -20,30 +20,24 @@
     <div class="new-exercise-input">
       <form action="/exercise" method="POST">
 
-            <div class="-stats">
-                <label for="type">Type:</label>
-                <input type="text" name="type" value="<%= pokemon.type %>" >
+            <div class="edit-details">
+                <label for="name">Name:</label>
+                <input type="text" name="Name" value="<%= exercise.name %>" >
 
-                <label for="HP">HP:</label>
-                <input type="text" name="HP" value="<%= pokemon.stats.hp %>">
+                <label for="description">Description:</label>
+                <input type="text" name="HP" value="<%= exercise.description %>">
 
-                <label for="attack">Attack:</label>
-                <input type="text" name="attack" value="<%= pokemon.stats.attack %>">
+                <label for="category">Category:</label>
+                <input type="text" name="attack" value="<%= exercise.category %>">
 
-                <label for="specialAttack">Special Attack:</label>
-                <input type="text" name="specialAttack" value="<%= pokemon.stats.spattack %>">
+                <label for="difficultyLevel">Difficulty Level:</label>
+                <input type="text" name="difficultyLevel" value="<%= exercise.difficultyLevel %>">
 
-                <label for="defense">Defense:</label>
-                <input type="text" name="defense" value="<%= pokemon.stats.defense %>">
-
-                <label for="specialDefense">Special Defense:</label>
-                <input type="text" name="specialDefense" value="<%= pokemon.stats.spdefense %>">
-
-                <label for="speed">Speed:</label>
-                <input type="text" name="speed" value="<%= pokemon.stats.speed %>">
+                <label for="equipment">Equipment Required:</label>
+                <input type="text" name="equipment" value="<%= exercise.requiresEquipment %>">
 
                 <label for="image">Image:</label>
-                <input type="text" name="img" value="<%= pokemon.img %>">
+                <input type="text" name="image" value="<%= exercise.image %>">
             </div>
         </div>
 

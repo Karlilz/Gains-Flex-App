@@ -101,7 +101,15 @@ router.get('/exercise/seed', async (req, res) => {
             difficultyLevel: "Beginner",
             requiresEquipment: true,
             image: "images/jump-rope.png"
-          }
+          },
+          {
+            name: "Hamstring Stretch",
+            description: "A flexibility exercise that targets the muscles in the back of your thighs. Sit on the floor with one leg extended straight and the other leg bent. Reach towards your extended foot while keeping your back straight.",
+            category: "Flexibility",
+            difficultyLevel: "Beginner",
+            requiresEquipment: false,
+            image: "images/hamstring-stretch.png"
+          },
     ]);
     res.send(seededExercises);
 });
@@ -127,18 +135,11 @@ router.delete('/exercise/:id', async (req, res) => {
 });
 
 // UPDATE ROUTE - post edited exercise 
-router.put('/exercise/:id', async (req, res) => {
-    try {
-        const updatedExercise = await Exercise.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!updatedExercise) {
-            res.send('Exercise not found.');
-        } else {
-            res.redirect(`/exercise/${req.params.id}`);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        res.send('An Error Occurred While Updating the Exercise');
-    }
+router.post ('/exercise', (req, res) => {
+    console.log(req.body);
+    req.body.id = exercise.length +1;
+    exercise.push(req.body);
+    res.redirect('/exercise');
 });
 
 // CREATE ROUTE - post new exercise
@@ -159,34 +160,22 @@ router.post('/exercise', async (req, res) => {
   });
 
 // EDIT ROUTE - edit exercise 
-router.get('/exercise/:id/edit', async (req, res) => {
-    try {
-        const exercise = await Exercise.findById(req.params.id);
-        if (!exercise) {
-            res.send('Exercise Not Found');
-        } else {
-            res.render('exercise/edit.ejs', { exercise });
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        res.send('An Error Occurred While Fetching the Exercise for Editing');
-    }
+router.get('/exercise/:id/edit', (req, res) => {
+    const id = req.params.id;
+    const foundExercise = exercise.find(({ id }) => id === req.params.id);
+    res.render('update.ejs', {
+        exercise: foundExercise,
+    });
 });
 
 
 // SHOW ROUTE - exercise details 
 router.get('/exercise/:id', async (req, res) => {
-    try {
-        const foundExercise = await Exercise.findById(req.params.id);
-        if (!exercise) {
-            res.send('Exercise Not Found');
-        } else {
-            res.render('exercise/show.ejs', { exercise });
-        }
-    } catch (error) {
-        console.error("Error:", error);
-        res.send('An Error Occurred While Fetching the Exercise Details');
-    }
+    const id = req.params.id;
+    const foundExercise = await Exercise.find(exercise => exercise.id === id);
+    res.render('show.ejs', {
+        exercise: foundExercise,
+    });
 });
 
 
