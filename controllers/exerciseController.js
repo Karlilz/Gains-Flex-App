@@ -160,24 +160,33 @@ router.post('/exercise', async (req, res) => {
         }
   });
 
+// SHOW ROUTE - exercise details 
+// router.get('/exercise/:id', async (req, res) => {
+//     const id = req.params.id;
+//     console.log(id)
+//     const foundExercise = await Exercise.find(exercise => exercise._id === id);
+//     console.log(foundExercise)
+//     res.render('show.ejs', {
+//         exercise: foundExercise,
+//     });
+// });
+
+
 // EDIT ROUTE - edit exercise 
-router.get('/exercise/:id/edit', (req, res) => {
+router.get('/exercise/:id/edit', async (req, res) => {
     const id = req.params.id;
-    const foundExercise = exercise.find(({ id }) => id === req.params.id);
+    const foundExercise = await Exercise.find(({ id }) => id === req.params.id);
     res.render('update.ejs', {
         exercise: foundExercise,
     });
 });
 
-
-// SHOW ROUTE - exercise details 
+// SHOW ROUTE 
 router.get('/exercise/:id', async (req, res) => {
-    const id = req.params.id;
-    const foundExercise = await Exercise.find(exercise => exercise.id === id);
-    res.render('show.ejs', {
+    const foundExercise = await Exercise.findById(req.params.id)
+    res.render('exercise/show.ejs', {
         exercise: foundExercise,
-    });
+    })
 });
-
 
 module.exports = router; 

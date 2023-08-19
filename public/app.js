@@ -12,12 +12,11 @@ allButtons.forEach(button => {
 });
 console.log(allButtons);
 
-const submit = document.querySelector('#submit');
+const submit = document.querySelector('.addToWorkoutButton');
 console.log(submit);
 
 
 submit.addEventListener("click", async (e) => {
-
     let res = await fetch('/exercise/schedule', {
         method: 'POST',
         body: JSON.stringify(schedule),

@@ -14,13 +14,16 @@
 
     <div class="button-container">
         <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
-
+    
         <button onclick="window.location.href='/exercise/<%= exercise.id %>/edit'">Edit Exercise</button>
-        
+    
         <form action="/exercise/<%= exercise.id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete <%= exercise.name %></button>
+            <button type="submit">Delete Exercise: <%= exercise.name %></button>
         </form>
     </div>
+    
+    <a href="/logout" class="log-out">Logout</a>
+    
 
     <img src="<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
 
@@ -31,8 +34,7 @@
         <p><b>Difficulty Level:</b> <%= exercise.difficultyLevel %></p>
         <p><b>Equipment:</b> <%= exercise.requiresEquipment %></p>
 
-
-        <button class="addToWorkoutButton">Add to Workout</button>
+        <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout</button>
     </div>
 </body>
 
