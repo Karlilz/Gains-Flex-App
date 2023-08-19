@@ -94,6 +94,14 @@ router.get('/exercise/seed', async (req, res) => {
             requiresEquipment: true, 
             image: "images/shoulder-press.png",
         },
+        {
+            name: "Jump Roping",
+            description: "A cardiovascular exercise using a jump rope. Swing the rope over your head and jump over it with each rotation. Keep a steady rhythm.",
+            category: "Cardiovascular",
+            difficultyLevel: "Beginner",
+            requiresEquipment: true,
+            image: "images/jump-rope.png"
+          }
     ]);
     res.send(seededExercises);
 });
@@ -107,36 +115,33 @@ router.get("/exercise/new", async (req, res) => {
 // DELETE ROUTE - delete exercise 
 router.delete('/exercise/:id', async (req, res) => {
     try {
-        const deletedExercise = await Exercise.findByIdAndDelete(req.params.id);
+        const deletedExercise = await Exercise.findByIdAndRemove(req.params.id);
         if (!deletedExercise) {
-            return res.status(404).send('Exercise not found.');
+            return res.send('Exercise Not Found');
         }
-        // Optionally, redirect or send a success response
         res.redirect('/exercise');
     } catch (error) {
         console.error("Error:", error);
-        res.status(500).send('An error occurred while deleting the exercise.');
+        res.send('An Error Occurred While Deleting the Exercise');
     }
 });
 
-// router.delete('/exercise/:id', async (req, res) => {
-//     let deletedExercise = await Exercise.findByIdAndDelete(req.params.id)
-//     res.redirect('/exercise')
-// }); 
-
 // UPDATE ROUTE - post edited exercise 
-router.put('exercise/:id', async (req, res) => {
-
+router.put('/exercise/:id', async (req, res) => {
+    try {
+        const updatedExercise = await Exercise.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!updatedExercise) {
+            res.send('Exercise not found.');
+        } else {
+            res.redirect(`/exercise/${req.params.id}`);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.send('An Error Occurred While Updating the Exercise');
+    }
 });
 
-
 // CREATE ROUTE - post new exercise
-// router.post('/exercise', async (req, res) => {
-//     req.body.user = req.session.userId
-//     let newExercise = await Exercise.create(req.body);
-//     console.log(req.session.userId);
-//     res.redirect('/exercise');
-// });
 router.post('/exercise', async (req, res) => {
     try {
       let newExercise = new Exercise({
@@ -154,47 +159,35 @@ router.post('/exercise', async (req, res) => {
   });
 
 // EDIT ROUTE - edit exercise 
-// router.get('/exercise/:id/edit', async (req, res) => {
-//     try {
-//         const exercise = await Exercise.findById(req.params.id);
-//         if (!exercise) {
-//             res.send('Exercise Not Found.');
-//         } else {
-//             res.render('exercise/edit.ejs', { exercise });
-//         }
-//     } catch (error) {
-//         console.error("Error:", error);
-//         res.send('An error occurred while fetching the exercise for editing.');
-//     }
-// });
-
 router.get('/exercise/:id/edit', async (req, res) => {
-    let foundExercise = await Exercise.findById(req.params.id);
-    res.render('exercise/update.ejs', {exercise});
+    try {
+        const exercise = await Exercise.findById(req.params.id);
+        if (!exercise) {
+            res.send('Exercise Not Found');
+        } else {
+            res.render('exercise/edit.ejs', { exercise });
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.send('An Error Occurred While Fetching the Exercise for Editing');
+    }
 });
+
 
 // SHOW ROUTE - exercise details 
 router.get('/exercise/:id', async (req, res) => {
     try {
         const foundExercise = await Exercise.findById(req.params.id);
         if (!exercise) {
-            res.send('Exercise not found.').status(404);
+            res.send('Exercise Not Found');
         } else {
             res.render('exercise/show.ejs', { exercise });
         }
     } catch (error) {
         console.error("Error:", error);
-        res.send('An error occurred while fetching the exercise details.').status(500);
+        res.send('An Error Occurred While Fetching the Exercise Details');
     }
 });
-
-// router.get('/exercise/:id', async (req, res) => {
-//     const id = req.params.id;
-//     const foundExercise = exercise.find(({ id }) => id === req.params.id);
-//     res.render('show.ejs', {
-//         exercise: foundExercise,
-//     });
-// });
 
 
 module.exports = router; 

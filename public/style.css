@@ -98,11 +98,23 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .exercise-container {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .exercise-img {
-    width: 250px; 
-    height: 250px; 
+    width: 250px;
+    height: 250px;
     padding: 5px;
-    margin: 25px; 
+    margin: 0; /* Remove the margin to bring images closer */
+  }
+  .exercise-name {
+    margin-top: 10px; /* Adjust margin for closer positioning */
+    font-weight: bold;
+    color: white;
   }
 
 
