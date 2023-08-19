@@ -135,10 +135,11 @@ router.delete('/exercise/:id', async (req, res) => {
 });
 
 // UPDATE ROUTE - post edited exercise 
-router.post ('/exercise', (req, res) => {
+router.post('/exercise', (req, res) => {
+    let exercises = [];
     console.log(req.body);
-    req.body.id = exercise.length +1;
-    exercise.push(req.body);
+    req.body.id = exercises.length + 1;
+    exercises.push(req.body);
     res.redirect('/exercise');
 });
 
