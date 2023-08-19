@@ -1,13 +1,13 @@
-<h2>Order for <%= order.userId.name %></h2>
+<h2>Workout Schedule for: <%= schedule.userId.name %></h2>
 <h4>Total: <%= order.total %></h4>
 
-<% order.coffees.forEach(coffee => { %>
+<% schedule.exercies.forEach(exercise => { %>
 <div>
     <p>
-        <%= coffee.name %> - <%= coffee.price %>
+        <%= exercise.name %>
     </p>
     <p>
-        <%= coffee.description %>
+        <%= exercise.description %>
     </p>
 </div>
 
