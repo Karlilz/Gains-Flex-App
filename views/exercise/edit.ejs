@@ -12,13 +12,11 @@
     <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
 </div>
 
-  <form action="/exercise/<%= exercise.id %>?_method=PUT" method="POST">
-
-    <img src="<%= exercise.img %>" alt="Image" class="exercise-img">
+  <img src="/<%= exercise.image %>" alt="Image" class="exercise-img">
 
   <main>
     <div class="new-exercise-input">
-      <form action="/exercise" method="POST">
+      <form action="/exercise/<%= exercise.id %>?_method=PUT" method="POST">
 
             <div class="edit-details">
                 <label for="name">Name:</label>

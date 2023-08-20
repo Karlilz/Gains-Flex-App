@@ -27,7 +27,9 @@
     <div class="exercise-index-images">
         <% exercise.forEach(exercise => { %>
           <div class="exercise-container">
-            <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
+            <a href="/exercise/<%= exercise.id %>">
+                <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
+            </a>
             <p class="exercise-name"><%= exercise.name %></p>
           </div>
         <% }); %>
