@@ -38,7 +38,11 @@
         <p><b>Difficulty Level:</b> <%= exercise.difficultyLevel %></p>
         <p><b>Equipment:</b> <%= exercise.requiresEquipment %></p>
 
-        <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
+
+        <a href="/exercise/schedule">
+            <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
+        </a>
+
     </div>
 </body>
 

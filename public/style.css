@@ -149,10 +149,10 @@ body {
     color: #88BDBC;
   }
   .show-exercise-images{
-    width: 700px; 
-    height: 700px; 
+    width: 1200px; /* Adjust this value to your desired width */
+    height: 1200px; /* Adjust this value to your desired height */
     padding: 5px;
-    margin: 45px;  
+    margin: 70px;
   }
   .show-exercise-details{
     color: white;

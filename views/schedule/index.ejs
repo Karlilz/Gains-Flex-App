@@ -1,7 +1,7 @@
-<% orders.forEach(order => { %>
+<% schedules.forEach(schedule => { %>
     <h2>Workout Schedule for <%= schedule.userId.name %></h2>
     
-    <% schedule.exercies.forEach(exercise => { %>
+    <% schedule.exercises.forEach(exercise => { %>
         <div>
             <p><%= exercise.name %> </p>
             <p><%= exercise.description %></p>

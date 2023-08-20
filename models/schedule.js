@@ -7,7 +7,6 @@ const scheduleSchema = new mongoose.Schema ({
     date: Date,
     reps: Number, 
     sets: Number,
-    isComplete: Boolean,
 });
 
 const Schedule = new mongoose.model('Schedule', scheduleSchema);
