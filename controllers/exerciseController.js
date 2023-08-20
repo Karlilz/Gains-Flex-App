@@ -4,6 +4,9 @@ const User = require('../models/user');
 const Exercise = require('../models/exercise');
 const Schedule = require('../models/schedule');
 
+const methodOverride = require("method-override")
+router.use(methodOverride('_method'))
+
 // INDEX ROUTE 
 router.get('/exercise', async (req, res) => {
     let exercise = await Exercise.find();
@@ -135,11 +138,30 @@ router.delete('/exercise/:id', async (req, res) => {
 });
 
 // UPDATE ROUTE - post edited exercise 
-router.post('/exercise/:id', (req, res) => {
-    let exercises = [];
-    console.log(req.body);
-    req.body.id = exercises.length + 1;
-    exercises.push(req.body);
+// router.post('/exercise/:id', (req, res) => {
+//     let exercises = [];
+//     console.log(req.body);
+//     req.body.id = exercises.length + 1;
+//     exercises.push(req.body);
+//     res.redirect('/exercise');
+// });
+router.put('/exercise/:id', async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    const updatedValues = {
+        name: body.name,
+        description: body.description,
+        category: body.category,
+        difficultyLevel: body.difficultyLevel,
+        requiresEquipment: body.requiresEquipment,
+        image: body.image,
+    };
+    console.log(updatedValues);
+    // const foundExercise = await Exercise.findById(id)
+    // console.log('found exercise:', foundExercise);
+    const updatedExercise = await Exercise.findOneAndUpdate({_id:id}, updatedValues);
+    console.log(updatedExercise);
+
     res.redirect('/exercise');
 });
 
@@ -163,7 +185,6 @@ router.post('/exercise', async (req, res) => {
 
 // EDIT ROUTE - edit exercise 
 router.get('/exercise/:id/edit', async (req, res) => {
-    const id = req.params.id;
     const foundExercise = await Exercise.findById(req.params.id)
     res.render('exercise/edit.ejs', {
         exercise: foundExercise,
