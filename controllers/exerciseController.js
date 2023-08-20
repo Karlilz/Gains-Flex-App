@@ -138,13 +138,6 @@ router.delete('/exercise/:id', async (req, res) => {
 });
 
 // UPDATE ROUTE - post edited exercise 
-// router.post('/exercise/:id', (req, res) => {
-//     let exercises = [];
-//     console.log(req.body);
-//     req.body.id = exercises.length + 1;
-//     exercises.push(req.body);
-//     res.redirect('/exercise');
-// });
 router.put('/exercise/:id', async (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -156,30 +149,24 @@ router.put('/exercise/:id', async (req, res) => {
         requiresEquipment: body.requiresEquipment,
         image: body.image,
     };
-    console.log(updatedValues);
-    // const foundExercise = await Exercise.findById(id)
-    // console.log('found exercise:', foundExercise);
     const updatedExercise = await Exercise.findOneAndUpdate({_id:id}, updatedValues);
-    console.log(updatedExercise);
-
     res.redirect('/exercise');
 });
 
 // CREATE ROUTE - post new exercise
 router.post('/exercise', async (req, res) => {
-    try {
-      let newExercise = new Exercise({
-        name: req.body.name,
-        description: req.body.description,
-        category: req.body.category,
-        difficultyLevel: req.body.difficultyLevel,
-        requiresEquipment: req.body.requiresEquipment
+    const id = req.params.id;
+    const body = req.body;
+    let newExercise = new Exercise({
+        name: body.name,
+        description: body.description,
+        category: body.category,
+        difficultyLevel: body.difficultyLevel,
+        requiresEquipment: body.requiresEquipment,
+        image: body.image,
       });
       await newExercise.save();
-      res.redirect('/exercises'); 
-        } catch (error) {
-        console.error(error);
-        }
+      res.redirect('/exercise'); 
   });
 
 
@@ -198,16 +185,5 @@ router.get('/exercise/:id', async (req, res) => {
         exercise: foundExercise,
     })
 });
-
-// SHOW ROUTE - exercise details 
-// router.get('/exercise/:id', async (req, res) => {
-//     const id = req.params.id;
-//     console.log(id)
-//     const foundExercise = await Exercise.find(exercise => exercise._id === id);
-//     console.log(foundExercise)
-//     res.render('show.ejs', {
-//         exercise: foundExercise,
-//     });
-// });
 
 module.exports = router; 

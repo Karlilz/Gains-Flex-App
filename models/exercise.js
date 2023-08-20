@@ -6,7 +6,7 @@ const exerciseSchema = new mongoose.Schema ({
     image: String,
     category: String,
     difficultyLevel: String,
-    requiresEquipment: Boolean, 
+    requiresEquipment: String, 
 });
 
 const Exercise = new mongoose.model('Exercise', exerciseSchema);

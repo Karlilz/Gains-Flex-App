@@ -15,9 +15,9 @@ router.post('/exercise/schedule', async (req, res) => {
 });
 
 // workout history for every sepecific user - have to be logged in to work
-// router.get('/workout/order', async (req, res) => {
-//     const workouts = await Workout.find({ userId: req.session.userId }) 
-//         .populate("exercises")
-//         .populate("userId");
-//     res.render('workout/index.ejs', { workouts });
-// });
+router.get('/workout/order', async (req, res) => {
+    const workouts = await Workout.find({ userId: req.session.userId }) 
+        .populate("exercises")
+        .populate("userId");
+    res.render('workout/index.ejs', { workouts });
+});
