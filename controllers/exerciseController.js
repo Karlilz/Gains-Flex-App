@@ -22,7 +22,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A classic bodyweight exercise targeting the chest and arms. Start in a plank position and lower your body towards the ground, then push back up.",
             category: "Strength Training", 
             difficultyLevel: "Intermediate", 
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/push-up.png",
         },
         {
@@ -30,7 +30,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A fundamental lower body exercise to build leg strength. Stand with feet shoulder-width apart, bend your knees, and lower your hips as if sitting back into a chair.",
             category: "Strength Training",
             difficultyLevel: "Beginner",
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/squat.png",
         },
         {
@@ -38,7 +38,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A dynamic full-body exercise that involves swinging a kettlebell between your legs and then up to chest height using a hip hinge motion.",
             category: "Cardio",
             difficultyLevel: "Intermediate",
-            requiresEquipment: true,
+            requiresEquipment: "Kettlebell",
             image: "images/kettlebell-swing.png",
         },
         {
@@ -46,7 +46,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A core-strengthening exercise that involves holding a push-up position with your body in a straight line from head to heels.",
             category: "Core Training",
             difficultyLevel: "Beginner",
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/plank.png",
         },
         {
@@ -54,7 +54,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A core exercise that involves twisting your torso while bringing opposite elbow and knee together, simulating a cycling motion.",
             category: "Strength Training",
             difficultyLevel: "Intermediate",
-            requiresEquipment:false,
+            requiresEquipment: "None",
             image:"images/lunges.png",
         },
         {
@@ -62,7 +62,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A classic weightlifting exercise targeting the chest, shoulders, and triceps. Lie on a bench and lift a barbell from a rack, lowering it to your chest and pressing it back up.",
             category: "Strength Training",
             difficultyLevel: "Intermediate",
-            requiresEquipment:true,
+            requiresEquipment:"Bench",
             image: "images/bench-press.png",
         },
         {
@@ -70,7 +70,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A full-body exercise that mimics climbing. Start in a plank position and alternate bringing your knees towards your chest in a running motion.",
             category: "Cardio",
             difficultyLevel: "Intermediate",
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/mountain-climber.png",
         },
         {
@@ -78,7 +78,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "An upper body exercise that targets the back and arms. Hang from a bar and pull your body up until your chin is above the bar.",
             category: "Strength Training",
             difficultyLevel: "Advanced",
-            requiresEquipment: true,
+            requiresEquipment: "Pull-up bar",
             image: "images/pull-up.png",
         },
         {
@@ -86,7 +86,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A yoga pose that stretches the entire body. Start in a plank position, then lift your hips up and back, forming an inverted V shape.",
             category: "Flexibility",
             difficultyLevel: "Beginner",
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/downward-dog.png",
         },
         {
@@ -94,7 +94,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A weightlifting exercise targeting the shoulders. Hold a dumbbell in each hand at shoulder height, then press them overhead.",
             category: "Strength Training",
             difficultyLevel: "Intermediate",
-            requiresEquipment: true, 
+            requiresEquipment: "Dumbbell", 
             image: "images/shoulder-press.png",
         },
         {
@@ -102,7 +102,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A cardiovascular exercise using a jump rope. Swing the rope over your head and jump over it with each rotation. Keep a steady rhythm.",
             category: "Cardiovascular",
             difficultyLevel: "Beginner",
-            requiresEquipment: true,
+            requiresEquipment: "Jump Rope",
             image: "images/jump-rope.png"
           },
           {
@@ -110,7 +110,7 @@ router.get('/exercise/seed', async (req, res) => {
             description: "A flexibility exercise that targets the muscles in the back of your thighs. Sit on the floor with one leg extended straight and the other leg bent. Reach towards your extended foot while keeping your back straight.",
             category: "Flexibility",
             difficultyLevel: "Beginner",
-            requiresEquipment: false,
+            requiresEquipment: "None",
             image: "images/hamstring-stretch.png"
           },
     ]);
@@ -118,12 +118,12 @@ router.get('/exercise/seed', async (req, res) => {
 });
 
 
-// NEW ROUTE - add new exercise 
+// NEW ROUTE 
 router.get("/exercise/new", async (req, res) => {
     res.render("exercise/new.ejs");
   });
 
-// DELETE ROUTE - delete exercise 
+// DELETE ROUTE 
 router.delete('/exercise/:id', async (req, res) => {
     try {
         const deletedExercise = await Exercise.findByIdAndRemove(req.params.id);
@@ -137,7 +137,7 @@ router.delete('/exercise/:id', async (req, res) => {
     }
 });
 
-// UPDATE ROUTE - post edited exercise 
+// UPDATE ROUTE 
 router.put('/exercise/:id', async (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -153,7 +153,7 @@ router.put('/exercise/:id', async (req, res) => {
     res.redirect('/exercise');
 });
 
-// CREATE ROUTE - post new exercise
+// CREATE ROUTE
 router.post('/exercise', async (req, res) => {
     const id = req.params.id;
     const body = req.body;
@@ -170,7 +170,7 @@ router.post('/exercise', async (req, res) => {
   });
 
 
-// EDIT ROUTE - edit exercise 
+// EDIT ROUTE
 router.get('/exercise/:id/edit', async (req, res) => {
     const foundExercise = await Exercise.findById(req.params.id)
     res.render('exercise/edit.ejs', {

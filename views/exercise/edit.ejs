@@ -6,10 +6,16 @@
 <title>Update Exercise</title>
 
 <body>
-  <h1>Enhance Your Workout: Update an Exercise</h1>
+  <div class="edit-exercise-header">
+    <h1>Enhance Your Workout: Update an Exercise</h1>
+  </div>
 
   <div class="button-container">
     <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
+</div>
+
+<div class="bottom-button-container">
+  <input type="submit" value="Update Exercise" />
 </div>
 
   <img src="/<%= exercise.image %>" alt="Image" class="exercise-img">
@@ -37,10 +43,6 @@
                 <label for="image">Image:</label>
                 <input type="text" name="image" value="<%= exercise.image %>">
             </div>
-        </div>
-
-        <div class="bottom-button-container">
-          <input type="submit" value="Update Exercise" />
         </div>
 
       </form>

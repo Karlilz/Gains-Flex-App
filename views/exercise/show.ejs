@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <h1>Exercise Details</h1>
-
+    <div class="show-exercise-header">
+        <h1>Exercise Details</h1>
+    </div>
     <div class="button-container">
         <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
     
@@ -22,19 +23,22 @@
         </form>
     </div>
     
-    <a href="/logout" class="log-out">Logout</a>
-    
+    <a href="/logout">
+        <button class="log-out">Logout</button>
+    </a>
 
-    <img src="/<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
+    <div class="show-exercise-images">
+        <img src="/<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
+    </div>
 
-    <div class="exercise-details">
+    <div class="show-exercise-details">
         <p><b>Name:</b> <%= exercise.name %></p>
         <p><b>Description:</b> <%= exercise.description %></p>
         <p><b>Category:</b> <%= exercise.category %></p>
         <p><b>Difficulty Level:</b> <%= exercise.difficultyLevel %></p>
         <p><b>Equipment:</b> <%= exercise.requiresEquipment %></p>
 
-        <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout</button>
+        <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
     </div>
 </body>
 

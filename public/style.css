@@ -109,10 +109,10 @@ body {
     width: 250px;
     height: 250px;
     padding: 5px;
-    margin: 0; /* Remove the margin to bring images closer */
+    margin: 0; 
   }
   .exercise-name {
-    margin-top: 10px; /* Adjust margin for closer positioning */
+    margin-top: 10px; 
     font-weight: bold;
     color: white;
   }
@@ -137,4 +137,31 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
   }
+  .new-exercise-headers{
+    color: #88BDBC;
+  }
+  .edit-exercise-header {
+    color: #88BDBC;
+  }
 
+
+  .show-exercise-header{
+    color: #88BDBC;
+  }
+  .show-exercise-images{
+    width: 700px; 
+    height: 700px; 
+    padding: 5px;
+    margin: 45px;  
+  }
+  .show-exercise-details{
+    color: white;
+    padding: 10px; 
+    width: 700px; 
+    position: absolute;
+    top: 240px; 
+    right: 150px; 
+    font-size: 18px;
+}
+
+ 
