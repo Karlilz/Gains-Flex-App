@@ -6,15 +6,17 @@
 
 <body>
     <div class="exercise-new-headers">
-        <h1>Add a New Exercise</h1>
+        <h1>Enhance Your Routine</h1>
+        <h2>Add a New Exercise</h2>
     </div>
 
-  <div class="newRoute-button-container">
-    <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
-  </div>
+    <ul class="exercise-new-nav">
+      <li class="left"><a href="/exercise">Home</a></li>
+      <li class="right"><a href="/logout">Logout</a></li>
+  </ul>
 
   <main>
-    <div class="new-exercise-input">
+    <div class="exercise-new-input">
       <form action="/exercise" method="POST">
 
         <label for="name"><b>Name:</b></label>

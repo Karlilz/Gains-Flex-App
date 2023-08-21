@@ -2,19 +2,22 @@
 <html lang="en">
 
 <head>
-  <title>Add a New Schedule</title>
+  <title>Create a New Schedule</title>
 
 <body>
-    <div class="new-schedule-header">
-        <h1>Create a New Schedule: <%= exercise.name %></h1>
+    <div class="schedule-new-headers">
+        <h1>Create a Workout Schedule</h1>
+        <h2>Featuring: <%= exercise.name %></h2>
     </div>
 
-  <div class="newSchedule-button-container">
-    <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
-  </div>
+
+    <ul class="schedule-new-nav">
+      <li class="left"><a href="/exercise">Home</a></li>
+      <li class="right"><a href="/logout">Logout</a></li>
+  </ul>
 
   <main>
-    <div class="new-schedule-input">
+    <div class="schedule-new-input">
       <form action="/schedule" method="POST">
 
         <label for="date"><b>Schedule Name:</b></label>
