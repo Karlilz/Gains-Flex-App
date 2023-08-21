@@ -16,6 +16,9 @@
             <p><b>Sets:</b> <%= schedule.sets%> </p>
         </div>
 
+        <p><b>Exercise Name:</b> <%= schedule.exerciseId.name %> </p>
+        <p><b>Exercise Description:</b> <%= schedule.exerciseId.description %> </p>
+        <p><img src="<%= schedule.exerciseId.image %>" width="100" height="100"> </p>
 
         <form action="/schedule/<%= schedule.id%>/edit" >
             <button type="submit">Edit Schedule</button> 

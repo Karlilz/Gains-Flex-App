@@ -9,7 +9,7 @@ const Schedule = require('../models/schedule');
 router.get('/schedule', async (req, res) => {
     let user = await User.findById(req.session.userId);
     let schedule = await Schedule.find().populate('exerciseId').populate('userId');
-    // console.log(schedule);
+    console.log(schedule)
     res.render('schedule/index.ejs', {schedule, user});
 });
 
@@ -21,16 +21,15 @@ router.get("/schedule/new/:id", async (req, res) => {
 
 // DELETE ROUTE 
 router.delete('/schedule/:id', async (req, res) => {
-    try {
+    // try {
         const deletedSchedule = await Schedule.findByIdAndRemove(req.params.id);
         if (!deletedSchedule) {
             return res.send('Schedule Not Found');
         }
         res.redirect('/schedule');
-    } catch (error) {
-        // console.error("Error:", error);
-        res.send('An Error Occurred While Deleting the schedule');
-    }
+    // } catch (error) {
+    //     res.send('An Error Occurred While Deleting the schedule');
+    // }
 });
 
 // UPDATE ROUTE 
@@ -42,7 +41,6 @@ router.put('/schedule/:id', async (req, res) => {
         date: body.date,
         reps: body.reps,
         sets: body.sets,
-        
     };
     const updatedSchedule = await Schedule.findOneAndUpdate({_id:id}, updatedValues);
     res.redirect('/schedule');
@@ -69,14 +67,6 @@ router.get('/schedule/:id/edit', async (req, res) => {
 //     res.render('schedule/show.ejs', {
 //         schedule: foundSchedule,
 //     })
-// });
-
-// // Order history for every sepecific user - have to be logged in to work
-// router.get('/exercise/schedule', async (req, res) => {
-//     const schedules = await Schedule.find({ userId: req.session.userId })
-//         .populate("exercises")
-//         .populate("userId");
-//     res.render('schedule/index.ejs', { schedules });
 // });
 
 module.exports = router; 
