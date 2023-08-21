@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add a New Schedule</title>
+
+<body>
+    <div class="schedule">
+        <h1>Create a New Schedule: <%= exercise.name %></h1>
+    </div>
+
+  <!-- <div class="newSchedule-button-container">
+    <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
+  </div> -->
+
+  <main>
+    <div class="new-schedule-input">
+      <form action="/schedule" method="POST">
+
+        <label for="date"><b>Schedule Name:</b></label>
+        <input type="text" name="scheduleName" placeholder="Schedule Name"><br>
+
+        <label for="date"><b>Date:</b></label>
+        <input type="text" name="date" placeholder="Exercise Date"><br>
+
+        <label for="reps"><b>Reps:</b></label>
+        <input type="text" name="reps" placeholder="Exercise Reps"><br>
+
+        <label for="sets"><b>Sets:</b></label>
+        <input type="text" name="sets" placeholder="Exercise Sets"><br>
+
+        <input type="hidden" name="exerciseId" value="<%= exercise.id %>">
+       
+        <div class="button-container">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+
+</html>

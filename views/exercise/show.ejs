@@ -39,8 +39,8 @@
         <p><b>Equipment:</b> <%= exercise.requiresEquipment %></p>
 
 
-        <a href="/exercise/schedule">
-            <button id="<% exercise._id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
+        <a href="/schedule/new/<%= exercise.id%>">
+            <button id="<%= exercise.id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
         </a>
 
     </div>
