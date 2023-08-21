@@ -33,21 +33,20 @@ router.delete('/schedule/:id', async (req, res) => {
     }
 });
 
-// // UPDATE ROUTE 
-// router.put('/schedule/:id', async (req, res) => {
-//     const id = req.params.id;
-//     const body = req.body;
-//     const updatedValues = {
-//         name: body.name,
-//         description: body.description,
-//         category: body.category,
-//         difficultyLevel: body.difficultyLevel,
-//         requiresEquipment: body.requiresEquipment,
-//         image: body.image,
-//     };
-//     const updatedSchedule = await Schedule.findOneAndUpdate({_id:id}, updatedValues);
-//     res.redirect('/schedule');
-// });
+// UPDATE ROUTE 
+router.put('/schedule/:id', async (req, res) => {
+    const id = req.params.id;
+    const body = req.body;
+    const updatedValues = {
+        scheduleName: body.scheduleName,
+        date: body.date,
+        reps: body.reps,
+        sets: body.sets,
+        
+    };
+    const updatedSchedule = await Schedule.findOneAndUpdate({_id:id}, updatedValues);
+    res.redirect('/schedule');
+});
 
 // CREATE ROUTE
 router.post('/schedule', async (req, res) => {
@@ -56,13 +55,13 @@ router.post('/schedule', async (req, res) => {
     res.redirect('/schedule'); 
   });
 
-//   // EDIT ROUTE
-// // router.get('/schedule/:id/edit', async (req, res) => {
-// //     const foundSchedule = await Schedule.findById(req.params.id)
-// //     res.render('schedule/edit.ejs', {
-// //         schedule: foundSchedule,
-// //     });
-// // });
+// EDIT ROUTE
+router.get('/schedule/:id/edit', async (req, res) => {
+    const foundSchedule = await Schedule.findById(req.params.id);
+    res.render('schedule/edit.ejs', {
+        schedule: foundSchedule,
+    });
+});
 
 // // SHOW ROUTE 
 // router.get('/schedule/:id', async (req, res) => {
