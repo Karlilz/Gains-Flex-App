@@ -10,9 +10,8 @@
 
 <body>
     <div class="exercise-index-headers">
-        <h1>Exercise Image Gallery</h1>
-
-        <h2>To Unlock Insights - Click Images Below</h2>
+        <h1>Exercise Gallery</h1>
+        <h2>Unlock Insights: Click Images</h2>
     </div>
 
     <ul class="exercise-index-nav">
@@ -22,11 +21,11 @@
 
     <div class="exercise-index-images">
         <% exercise.forEach(exercise => { %>
-          <div class="exercise-container">
+          <div class="exercise-index-container">
             <a href="/exercise/<%= exercise.id %>">
-                <img src="<%= exercise.image %>" alt="Image" class="exercise-img">
+                <img src="<%= exercise.image %>" alt="Image" class="exercise-index-img">
             </a>
-            <p class="exercise-name"><%= exercise.name %></p>
+            <p class="exercise-index-name"><%= exercise.name %></p>
           </div>
         <% }); %>
       </div>

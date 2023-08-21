@@ -9,7 +9,7 @@ const Schedule = require('../models/schedule');
 router.get('/schedule', async (req, res) => {
     let user = await User.findById(req.session.userId);
     let schedule = await Schedule.find().populate('exerciseId').populate('userId');
-    console.log(schedule);
+    // console.log(schedule);
     res.render('schedule/index.ejs', {schedule, user});
 });
 

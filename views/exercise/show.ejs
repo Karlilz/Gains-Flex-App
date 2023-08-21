@@ -11,8 +11,9 @@
 
 <body>
 
-    <div class="show-exercise-header">
-        <h1><%= exercise.name %> Details</h1>
+    <div class="exercise-show-headers">
+        <h1>Exercise Profiles</h1>
+        <h2><%= exercise.name %></h2>
     </div>
 
     <ul class="exercise-show-nav">
@@ -20,12 +21,11 @@
         <li class="right"><a href="/logout">Logout</a></li>
     </ul>
 
-    <div class="show-exercise-images">
+    <div class="exercise-show-images">
         <img src="/<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
     </div>
 
     <div class="show-exercise-details">
-        <p><b>Exercise Name:</b> <%= exercise.name %></p>
         <p><b>Description:</b> <%= exercise.description %></p>
         <p><b>Category:</b> <%= exercise.category %></p>
         <p><b>Difficulty Level:</b> <%= exercise.difficultyLevel %></p>
