@@ -1,13 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #254E58;
-}.landing-headers {
-    color: #88BDBC;
+    background-color: #88BDBC;
+    /* background-color: #254E58; */
+}
+.landing-headers {
+    color: #254E58;
     font-family: bungee;
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
     margin-top: 20px;
+    /* color: #88BDBC; */
 }
 .landing-icon {
     position: center;
@@ -31,10 +34,11 @@ body {
 }
 
 .login-headers {
-    color: #88BDBC;
+    color: #254E58;
+    /* color: #88BDBC; */
     font-family: bungee;
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
     margin-top: 20px;
 }
 .login-icon {
@@ -60,10 +64,11 @@ body {
 }
 
 .signup-headers {
-    color: #88BDBC;
+    color: #254E58;
+    /* color: #88BDBC; */
     font-family: bungee;
     text-align: center;
-    font-size: 25px;
+    font-size: 40px;
     margin-top: 20px;
 }
 .signup-fields {
@@ -72,6 +77,7 @@ body {
     align-items: center; 
     max-width: 300px; 
     margin: 0 auto; 
+    margin-bottom: 20px; /* Adjust this value as needed */
 }
 .signup-fields input .signup-fields button {
     margin-bottom: 45px 
@@ -88,10 +94,14 @@ body {
 }
 
 .exercise-index-headers h1{
-    color: #88BDBC;
+    color: #254E58;
+    font-size: 40px;
+    font-family: bungee;
+    /* color: #88BDBC; */
 }
 .exercise-index-headers h2{
     color: #F6EEE3;
+    font-size: 30px;
 }
 .exercise-index-images {
     display: flex;
@@ -110,15 +120,21 @@ body {
     height: 250px;
     padding: 5px;
     margin: 0; 
+    /* border: 5px solid black;
+    padding: 3px;
+    margin: 5px; */
   }
   .exercise-name {
     margin-top: 10px; 
     font-weight: bold;
-    color: white;
+    font-size: 20px;
+    color: black;
+    /* color: #88BDBC; */
   }
 
     .exercise-new-headers{
-    color: #88BDBC;
+    color: #254E58;
+    /* color: #88BDBC; */
 }
     .new-exercise-input {
     max-width: 400px;
@@ -130,7 +146,7 @@ body {
   }
   .new-exercise-input input[type="text"],
   .new-exercise-input input[type="submit"] {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -138,7 +154,9 @@ body {
     margin-bottom: 20px;
   }
   .new-exercise-headers{
-    color: #88BDBC;
+    color: #254E58;
+    /* color: #88BDBC; */
+    font-size: 25px;
   }
   .edit-exercise-header {
     color: #88BDBC;
@@ -146,16 +164,24 @@ body {
 
 
   .show-exercise-header{
-    color: #88BDBC;
+    color: #254E58;
+    /* color: #88BDBC; */
+    font-size: 25px;
+    font-family: bungee;
+
   }
-  .show-exercise-images{
-    width: 1200px; /* Adjust this value to your desired width */
-    height: 1200px; /* Adjust this value to your desired height */
+  .show-exercise-images {
+    max-width: 1000%;
+    max-height: 100%;
     padding: 5px;
-    margin: 70px;
+    margin: 20px;
+  }
+  .show-exercise-images img {
+    width: 450px;
+    height: 450px;
   }
   .show-exercise-details{
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px; 
     width: 700px; 
     position: absolute;
@@ -163,5 +189,34 @@ body {
     right: 150px; 
     font-size: 18px;
 }
+.show-exercise-actions {
+    display: flex;
+    gap: 10px; 
+}
 
- 
+
+ .new-schedule-header{
+    font-size: 25px;
+    color: #254E58;
+    font-family: bungee;
+    /* color: #88BDBC; */
+ }
+ .new-schedule-input label {
+  display: block;
+  margin-bottom: 5px;
+}
+.new-schedule-input input[type="text"],
+.new-schedule-input input[type="submit"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.edit-exercise-header{
+  font-size: 25px;
+  color: #254E58;
+  font-family: bungee;
+}

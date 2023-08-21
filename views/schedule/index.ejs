@@ -1,17 +1,16 @@
 <h2>Workout Schedule for: <%= user.name %></h2>
 <% schedule.forEach(schedule => { %>
         <div>
-            <p>Schedule Name: <%= schedule.scheduleName%> </p>
-            <p>Schedule Date: <%= schedule.date%> </p>
-            <p>Reps: <%= schedule.reps%> </p>
-            <p>Sets: <%= schedule.sets%> </p>
+            <p><b>Schedule Name:</b> <%= schedule.scheduleName%> </p>
+            <p><b>Schedule Date:</b> <%= schedule.date%> </p>
+            <p><b>Reps:</b> <%= schedule.reps%> </p>
+            <p><b>Sets:</b> <%= schedule.sets%> </p>
 
             <p>Exercise Name: <%= schedule.exerciseId.name %> </p>
             <p>Exercise Description: <%= schedule.exerciseId.description %> </p>
             <p><img src="<%= schedule.exerciseId.image %>" width="100" height="100"> </p>
         </div>
 
-    
         <form action="/schedule/<%= schedule.id%>?_method=DELETE" method="POST">
             <button type="submit">Delete Schedule</button>
         </form>

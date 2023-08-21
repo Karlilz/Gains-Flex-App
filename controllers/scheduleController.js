@@ -28,7 +28,7 @@ router.delete('/schedule/:id', async (req, res) => {
         }
         res.redirect('/schedule');
     } catch (error) {
-        console.error("Error:", error);
+        // console.error("Error:", error);
         res.send('An Error Occurred While Deleting the schedule');
     }
 });

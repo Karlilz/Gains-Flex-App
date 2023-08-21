@@ -10,17 +10,13 @@
 </head>
 
 <body>
+
     <div class="show-exercise-header">
-        <h1>Exercise Details</h1>
+        <h1><%= exercise.name %> Details</h1>
     </div>
+
     <div class="button-container">
         <button onclick="window.location.href='/exercise'">Back to Exercise Image Gallery</button>
-    
-        <button onclick="window.location.href='/exercise/<%= exercise.id %>/edit'">Edit Exercise</button>
-    
-        <form action="/exercise/<%= exercise.id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Exercise: <%= exercise.name %></button>
-        </form>
     </div>
     
     <a href="/logout">
@@ -32,16 +28,28 @@
     </div>
 
     <div class="show-exercise-details">
-        <p><b>Name:</b> <%= exercise.name %></p>
+        <p><b>Exercise Name:</b> <%= exercise.name %></p>
         <p><b>Description:</b> <%= exercise.description %></p>
         <p><b>Category:</b> <%= exercise.category %></p>
         <p><b>Difficulty Level:</b> <%= exercise.difficultyLevel %></p>
         <p><b>Equipment:</b> <%= exercise.requiresEquipment %></p>
 
 
-        <a href="/schedule/new/<%= exercise.id%>">
-            <button id="<%= exercise.id%>" class="addToWorkoutButton">Add to Workout Schedule</button>
-        </a>
+        <div class="show-exercise-actions">
+            <a href="/schedule/new/<%= exercise.id %>">
+                <button id="<%= exercise.id %>" class="addToWorkoutButton">Add to Workout Schedule</button>
+            </a>
+        
+            <button onclick="window.location.href='/exercise/<%= exercise.id %>/edit'">
+                Edit Exercise
+            </button>
+        
+            <form action="/exercise/<%= exercise.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    Delete Exercise: <%= exercise.name %>
+                </button>
+            </form>
+        </div>
 
     </div>
 </body>
