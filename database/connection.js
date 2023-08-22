@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
 
 mongoose.connect(
-    'mongodb+srv://klazarte:KLxmongoDB@sei.2c3lyiq.mongodb.net/GainFlex-Tracker-App'
+    process.env.DATABASE_URL
 );
 
 mongoose.connection.on("connected", () => console.log("Mongoose Successfully Connected"));
