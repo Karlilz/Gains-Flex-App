@@ -3,7 +3,7 @@
 # GainFlex Tracker App
 
 ### About The Project
-Welcome to   * [GainFlex](XXXXXX) - Your Ultimate Exercise Tracker!
+Welcome to *[GainFlex](https://gainflex-tracker-app.onrender.com/) - Your Ultimate Exercise Tracker!
 
 Track your fitness journey like never before with our state-of-the-art exercise tracker app. Whether you're a seasoned athlete or just starting your fitness adventure, our app is designed to help you keep track of your workouts to help you achieve your desired level of health and wellness.
 
@@ -55,5 +55,5 @@ Track your fitness journey like never before with our state-of-the-art exercise 
 
 ---
 ### Links
-  * [GitHub](XXXXXX)
-  * [GainFlex] (DEPLOYMENT)
+  * [GitHub](https://github.com/Karlilz/Gains-Flex-App)
+  * [GainFlex](https://gainflex-tracker-app.onrender.com/)
