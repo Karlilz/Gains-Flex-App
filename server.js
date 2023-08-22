@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 });
 
-// define our own middleware to check for a loggin user. If no user go to login screen
+// Middleware to check for a loggin user
 app.use((req, res, next) => {
     if(!req.session.userId){
         res.redirect('/login');

@@ -236,7 +236,7 @@ body {
   .exercise-show-images img {
     width: 450px;
     height: 450px;
-  }
+  } 
   .show-exercise-details{
     color: rgb(0, 0, 0);
     padding: 10px; 
@@ -384,6 +384,7 @@ body {
 .schedule-actions {
   display: flex; 
 }
+
 .schedule-actions form {
   margin-right: 10px; 
 }
