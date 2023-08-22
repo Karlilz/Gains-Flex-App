@@ -19,18 +19,6 @@ Track your fitness journey like never before with our state-of-the-art exercise 
 - MongoDB
 
 ---
-### Approach Taken 
-Starting with a thorough planning phase, I defined the app's features and functionality, including user authentication, and the routes and schemas for both the exercise and schedule models. I created an initial wireframe and trello board with my tasks. 
-
-For the backend, I chose to implement a RESTful API using a technology stack that included Node.js and Express.js. This allowed me to handle user authentication securely using JSON Web Tokens (JWT) and set up endpoints for creating, updating, and retrieving exercise data. I integrated a PostgreSQL database to store user profiles and exercise information, ensuring data integrity and efficient retrieval.
-
-On the frontend, I utilized React.js to create a dynamic and responsive user interface. I implemented components for user registration, login, exercise logging, and progress visualization. API calls were made using asynchronous JavaScript to interact with the backend, enabling real-time data updates without requiring page refreshes.
-
-To ensure a polished user experience, I incorporated CSS and a front-end framework for styling, maintaining a consistent design throughout the app. 
-
-Finally, I deployed my app on Render.
-
----
 ### Initial Wireframe 
 ![**Project 2 Wireframe**](public/images/project2Wireframe.png)
 
@@ -51,8 +39,12 @@ Finally, I deployed my app on Render.
 ![**Project 2 ERD**](public/images/project2ERD.png)
 
 ---
-### Unsolved Problems 
-- The images that got populated on my exercise show route were all grabbed from my seed data, which were png image files added to my local file. However, when a user wants to add a new exercise to their account they are given an option to include an image URL. The image gets uploaded to the exercise index page, but does not sucessfully load when I open the show route for that added exercise. 
+### Next Steps: Planned Future Enhancements 
+- Video Tutorials: Integrate video tutorials demonstrating proper exercise techniques and form to ensure users perform workouts correctly.
+- Reminder Notifications: Implement personalized reminder notifications to encourage users to stick to their exercise routines.
+- Social Sharing: Allow users to share their exercise achievements, progress, or completed workouts on social media platforms directly from the app.
+- Advanced Exercise Logging: Enable users to track specific details like workout duration, weights used, and rest periods for each exercise.
+- Customizable Goals: Allow users to set and track personalized fitness goals, like weight loss, muscle gain, or specific endurance targets.
 
 ---
 ### GainFlex App Screenshots
