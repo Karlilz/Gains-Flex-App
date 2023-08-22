@@ -23,8 +23,8 @@
     </ul>
 
     <div class="exercise-show-images">
-        <% const imageUrl = exercise.image.startsWith("https") ? new URL(exercise.image).pathname : exercise.image; %>
-        <% if (exercise.image.startsWith("https")) { %>
+        <% const imageUrl = exercise.image.startsWith("http") ? new URL(exercise.image).pathname : exercise.image; %>
+        <% if (exercise.image.startsWith("http")) { %>
             <img src="<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
         <% } else { %>
             <img src="/<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
