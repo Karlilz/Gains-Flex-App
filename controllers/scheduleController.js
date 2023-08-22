@@ -8,9 +8,11 @@ const Schedule = require('../models/schedule');
 // INDEX ROUTE
 router.get('/schedule', async (req, res) => {
     let user = await User.findById(req.session.userId);
+    let exerciseId = await Exercise.findById(req.body.id);
     let schedule = await Schedule.find().populate('exerciseId').populate('userId');
     console.log(schedule)
-    res.render('schedule/index.ejs', {schedule, user});
+    console.log(exerciseId)
+    res.render('schedule/index.ejs', {schedule, user, exerciseId});
 });
 
 // NEW ROUTE 
