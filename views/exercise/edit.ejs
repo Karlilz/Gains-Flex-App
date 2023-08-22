@@ -16,9 +16,14 @@
   <li class="right"><a href="/logout">Logout</a></li>
 </ul>
 
-  <div class="exercise-edit-images">
-    <img src="/<%= exercise.image %>" alt="Image" class="exercise-img">
-  </div>
+  <div class="exercise-show-images">
+    <% const imageUrl = exercise.image.startsWith("http") ? new URL(exercise.image).pathname : exercise.image; %>
+    <% if (exercise.image.startsWith("http")) { %>
+        <img src="<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
+    <% } else { %>
+        <img src="/<%= exercise.image %>" alt="Exercise Image" class="exercise-img">
+    <% } %>
+</div>
 
   <main>
     <div class="exercise-edit-input">
