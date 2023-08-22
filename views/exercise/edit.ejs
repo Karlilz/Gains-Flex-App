@@ -11,6 +11,7 @@
   </div>
 
 <ul class="exercise-edit-nav">
+  <li class="left"><a href="/exercise/<%= exercise.id %>">Back</a></li>
   <li class="left"><a href="/exercise"> Home</a></li>
   <li class="right"><a href="/logout">Logout</a></li>
 </ul>
@@ -23,7 +24,7 @@
     <div class="exercise-edit-input">
       <form action="/exercise/<%= exercise.id %>?_method=PUT" method="POST">
 
-            <div class="edit-details">
+            <div class="exercise-edit-details">
                 <label for="name"><b>Name:</b></label>
                 <input type="text" name="name" value="<%= exercise.name %>" >
 

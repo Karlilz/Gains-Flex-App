@@ -21,15 +21,11 @@ router.get("/schedule/new/:id", async (req, res) => {
 
 // DELETE ROUTE 
 router.delete('/schedule/:id', async (req, res) => {
-    // try {
         const deletedSchedule = await Schedule.findByIdAndRemove(req.params.id);
         if (!deletedSchedule) {
             return res.send('Schedule Not Found');
         }
         res.redirect('/schedule');
-    // } catch (error) {
-    //     res.send('An Error Occurred While Deleting the schedule');
-    // }
 });
 
 // UPDATE ROUTE 
@@ -60,13 +56,5 @@ router.get('/schedule/:id/edit', async (req, res) => {
         schedule: foundSchedule,
     });
 });
-
-// // SHOW ROUTE 
-// router.get('/schedule/:id', async (req, res) => {
-//     const foundSchedule = await Schedule.findById(req.params.id)
-//     res.render('schedule/show.ejs', {
-//         schedule: foundSchedule,
-//     })
-// });
 
 module.exports = router; 

@@ -11,12 +11,13 @@
   </div>
 
 <ul class="exercise-edit-nav">
+  <li class="left"><a href="/schedule">Back</a></li>
   <li class="left"><a href="/exercise"> Home</a></li>
   <li class="right"><a href="/logout">Logout</a></li>
 </ul>
 
   <main>
-    <div class="schedule">
+    <div class="schedule-edit-input">
       <form action="/schedule/<%= schedule.id %>?_method=PUT" method="POST">
 
             <div class="schedule-edit-details">
